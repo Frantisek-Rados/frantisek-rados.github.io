@@ -1,89 +1,281 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>František Radoš – QA portfólio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>František Radoš | QA Portfolio</title>
     <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #f6f9fc 0%, #e9f1f8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
         }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+
+        .card {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 40px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.20);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.2s ease;
         }
-        h2 {
-            color: #2c3e50;
-            margin-top: 30px;
+
+        /* ----- HEADER ----- */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e2edf7;
+            padding-bottom: 1.5rem;
         }
-        .project {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
+
+        .header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0b3b5c, #2b7a9c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
         }
-        a {
-            color: #3498db;
+
+        .header .badge {
+            background: #0b3b5c;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.4rem 1.2rem;
+            border-radius: 100px;
+            box-shadow: 0 4px 8px rgba(11, 59, 92, 0.15);
+            letter-spacing: 0.3px;
+        }
+
+        /* ----- SEKCIE ----- */
+        .section {
+            margin-bottom: 2.2rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0b3b5c;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #b8d4e8, transparent);
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: #1e3b4f;
+            line-height: 1.7;
+            background: #f0f6fb;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            border-left: 5px solid #2b7a9c;
+        }
+
+        /* ----- PROJEKTY ----- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 1.2rem 1.5rem;
+            border-radius: 24px;
+            box-shadow: 0 6px 16px rgba(0, 20, 40, 0.06);
+            border: 1px solid #eaf0f6;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px -8px rgba(11, 59, 92, 0.12);
+            border-color: #b8d4e8;
+        }
+
+        .project-card strong {
+            display: block;
+            font-size: 1.05rem;
+            color: #0b3b5c;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-card p {
+            color: #2c4a5e;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0.6rem;
+        }
+
+        .project-card a {
+            color: #1f6e8c;
+            font-weight: 500;
             text-decoration: none;
+            font-size: 0.9rem;
         }
-        a:hover {
+
+        .project-card a:hover {
             text-decoration: underline;
+            color: #0b3b5c;
         }
-        .tech {
-            background: #e9ecef;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            display: inline-block;
-            margin: 3px;
+
+        /* ----- TECHNOLOGIE ----- */
+        .tech-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.3rem;
+        }
+
+        .tech-tag {
+            background: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #0b3b5c;
+            border: 1px solid #cde0ed;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            letter-spacing: 0.2px;
+        }
+
+        /* ----- KONTAKT ----- */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 0.3rem;
+        }
+
+        .contact-links a {
+            background: white;
+            padding: 0.5rem 1.8rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            color: #0b3b5c;
+            border: 1px solid #cde0ed;
+            transition: background 0.15s ease, border-color 0.15s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .contact-links a:hover {
+            background: #e6f0f8;
+            border-color: #2b7a9c;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 600px) {
+            .card {
+                padding: 1.5rem;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>František Radoš – QA portfólio</h1>
 
-    <h2>O mne</h2>
-    <p>Ahoj! Som junior QA tester. Učím sa automatizáciu, píšem testy v Pythone, používam Playwright a GitHub Actions.</p>
+<div class="card">
 
-    <h2>Projekty</h2>
-
-    <div class="project">
-        <strong>Python + pytest testy</strong><br>
-        API testy, parametrizácia, Playwright UI testy, POM, GitHub Actions CI/CD.<br>
-        <a href="https://github.com/Frantisek-Rados/python-pytest-tests">👉 GitHub repozitár</a>
+    <!-- HLAVIČKA -->
+    <div class="header">
+        <h1>František Radoš</h1>
+        <span class="badge">🔍 QA &bull; Automation</span>
     </div>
 
-    <div class="project">
-        <strong>SQL learning</strong><br>
-        SQL dotazy – SELECT, JOIN, GROUP BY, podotázky, práca s DBeaver.<br>
-        <a href="https://github.com/Frantisek-Rados/SQL-learning">👉 GitHub repozitár</a>
+    <!-- O MNE -->
+    <div class="section">
+        <div class="section-title">🧑‍💻 O mne</div>
+        <div class="about-text">
+            Ahoj! Som junior QA tester. Učím sa automatizáciu, píšem testy v Pythone, používam Playwright a GitHub Actions.
+            Tieto projekty sú dôkazom, že to viem pretaviť do praxe.
+        </div>
     </div>
 
-    <div class="project">
-        <strong>SauceDemo E2E testy</strong><br>
-        Kompletný nákupný proces – prihlásenie, košík, objednávka, odhlásenie.<br>
-        <a href="https://github.com/Frantisek-Rados/saucedemo-e2e-tests">👉 GitHub repozitár</a>
+    <!-- PROJEKTY -->
+    <div class="section">
+        <div class="section-title">📁 Projekty</div>
+        <div class="project-grid">
+
+            <div class="project-card">
+                <strong>Python + pytest</strong>
+                <p>API testy, parametrizácia, Playwright UI testy, POM, CI/CD.</p>
+                <a href="https://github.com/Frantisek-Rados/python-pytest-tests">👉 Repozitár</a>
+            </div>
+
+            <div class="project-card">
+                <strong>SQL learning</strong>
+                <p>SELECT, JOIN, GROUP BY, podotázky, práca s DBeaver.</p>
+                <a href="https://github.com/Frantisek-Rados/SQL-learning">👉 Repozitár</a>
+            </div>
+
+            <div class="project-card">
+                <strong>SauceDemo E2E</strong>
+                <p>Nákupný proces – prihlásenie, košík, objednávka, odhlásenie.</p>
+                <a href="https://github.com/Frantisek-Rados/saucedemo-e2e-tests">👉 Repozitár</a>
+            </div>
+
+        </div>
     </div>
 
-    <h2>Technológie</h2>
-    <span class="tech">Python</span>
-    <span class="tech">pytest</span>
-    <span class="tech">Playwright</span>
-    <span class="tech">SQL</span>
-    <span class="tech">Postman</span>
-    <span class="tech">GitHub Actions</span>
-    <span class="tech">Git</span>
+    <!-- TECHNOLÓGIE -->
+    <div class="section">
+        <div class="section-title">🛠️ Technológie</div>
+        <div class="tech-cloud">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">pytest</span>
+            <span class="tech-tag">Playwright</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">Postman</span>
+            <span class="tech-tag">GitHub Actions</span>
+            <span class="tech-tag">Git</span>
+        </div>
+    </div>
 
-    <h2>Kontakt</h2>
-    <p>
-        <a href="https://github.com/Frantisek-Rados">GitHub</a> |
-        <a href="https://www.linkedin.com/in/tvoj-link">LinkedIn</a>
-    </p>
+    <!-- KONTAKT -->
+    <div class="section">
+        <div class="section-title">📬 Kontakt</div>
+        <div class="contact-links">
+            <a href="https://github.com/Frantisek-Rados">GitHub</a>
+            <a href="https://www.linkedin.com/in/tvoj-link">LinkedIn</a>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
