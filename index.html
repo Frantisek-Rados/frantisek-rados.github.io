@@ -3,80 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>František Radoš | QA Engineer & Aspiring IT Specialist</title>
-  <meta name="description" content="Junior QA Tester | Python & Automation | Learning Ethical Hacking">
+  <title>František Radoš | QA & Cybersecurity</title>
+  <meta name="description" content="Junior QA Tester | Learning Ethical Hacking | Python & Automation">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html {
-      background: #eef4fb;
+    :root {
+      --bg: #0a0e1a;
+      --bg-card: #131829;
+      --accent: #00ff9d;
+      --accent-dim: #00cc7d;
+      --text: #e6edf3;
+      --text-dim: #8b949e;
+      --border: #21262d;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.6;
-      color: #2c3e50;
-      background: #eef4fb;
-      padding: 30px 20px;
-      min-height: 100vh;
+      padding: 40px 20px;
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(0, 255, 157, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0, 150, 255, 0.06) 0%, transparent 40%);
+      background-attachment: fixed;
     }
 
     .container {
       max-width: 900px;
       margin: 0 auto;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(74, 144, 217, 0.15);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 50px 45px;
+      box-shadow: 0 0 60px rgba(0, 255, 157, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
     }
 
     header {
       text-align: center;
-      padding-bottom: 30px;
-      border-bottom: 2px solid #4a90d9;
-      margin-bottom: 30px;
+      padding-bottom: 35px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .prompt {
+      font-family: 'Courier New', monospace;
+      font-size: 0.85em;
+      color: var(--accent);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .prompt::before {
+      content: '> ';
+      color: var(--text-dim);
+    }
+
+    .prompt::after {
+      content: '_';
+      animation: blink 1.2s infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
     }
 
     h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
-      color: #1a2b3c;
+      font-size: 2.4em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 0%, #00ff9d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .subtitle {
       font-size: 1.15em;
-      color: #4a90d9;
-      font-weight: 700;
+      color: var(--accent);
+      font-weight: 600;
+      font-family: 'Courier New', monospace;
     }
 
     .subtitle-secondary {
-      font-size: 1em;
-      color: #2c5f8d;
-      margin-top: 6px;
-      font-weight: 600;
+      font-size: 0.95em;
+      color: var(--text-dim);
+      margin-top: 8px;
+      font-family: 'Courier New', monospace;
     }
 
     section {
-      margin-bottom: 35px;
+      margin-bottom: 40px;
     }
 
     h2 {
-      font-size: 1.4em;
-      color: #1a2b3c;
-      margin-bottom: 15px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #eaeef2;
+      font-size: 1.3em;
+      color: var(--text);
+      margin-bottom: 18px;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: '#';
+      color: var(--accent);
+      font-weight: 700;
     }
 
     h3 {
-      font-size: 1.1em;
-      color: #4a90d9;
-      margin-top: 20px;
-      margin-bottom: 10px;
+      font-size: 1em;
+      color: var(--accent);
+      margin-top: 22px;
+      margin-bottom: 12px;
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85em;
+    }
+
+    h3::before {
+      content: '// ';
+      color: var(--text-dim);
     }
 
     p {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      color: var(--text);
     }
 
     ul {
@@ -85,78 +159,95 @@
     }
 
     li {
-      padding: 8px 0 8px 24px;
+      padding: 10px 0 10px 26px;
       position: relative;
+      color: var(--text);
     }
 
     li::before {
-      content: "▸";
+      content: '▸';
       position: absolute;
       left: 0;
-      color: #4a90d9;
+      color: var(--accent);
       font-weight: bold;
     }
 
     a {
-      color: #4a90d9;
+      color: var(--accent);
       text-decoration: none;
       font-weight: 600;
+      transition: all 0.2s;
+      border-bottom: 1px solid transparent;
     }
 
     a:hover {
-      text-decoration: underline;
+      color: #fff;
+      border-bottom-color: var(--accent);
     }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .tag {
-      background: #eef4fb;
-      color: #2c5f8d;
-      padding: 6px 12px;
+      background: rgba(0, 255, 157, 0.08);
+      color: var(--accent);
+      padding: 6px 14px;
       border-radius: 6px;
-      font-size: 0.9em;
+      font-size: 0.85em;
       font-weight: 500;
-      border: 1px solid #d6e4f0;
+      font-family: 'Courier New', monospace;
+      border: 1px solid rgba(0, 255, 157, 0.25);
+      transition: all 0.2s;
+    }
+
+    .tag:hover {
+      background: rgba(0, 255, 157, 0.15);
+      border-color: var(--accent);
     }
 
     .contact-links {
       display: flex;
-      gap: 15px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     .contact-links a {
-      background: #4a90d9;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
+      background: transparent;
+      color: var(--accent);
+      padding: 10px 22px;
+      border-radius: 8px;
       font-weight: 600;
+      font-family: 'Courier New', monospace;
+      border: 1px solid var(--accent);
+      border-bottom: 1px solid var(--accent);
+      transition: all 0.2s;
     }
 
     .contact-links a:hover {
-      background: #357abd;
-      text-decoration: none;
+      background: var(--accent);
+      color: var(--bg);
     }
 
     footer {
       text-align: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 2px solid #eaeef2;
-      color: #7a8a99;
-      font-size: 0.9em;
+      margin-top: 45px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.85em;
+      font-family: 'Courier New', monospace;
     }
 
     @media (max-width: 600px) {
-      body { padding: 15px 10px; }
-      .container { padding: 20px; }
-      h1 { font-size: 1.6em; }
+      body { padding: 20px 12px; }
+      .container { padding: 30px 22px; }
+      h1 { font-size: 1.7em; }
+      h2 { font-size: 1.1em; }
     }
   </style>
 </head>
@@ -164,6 +255,7 @@
   <div class="container">
 
     <header>
+      <div class="prompt">whoami</div>
       <h1>František Radoš</h1>
       <div class="subtitle">Junior QA Tester | Python & Automation</div>
       <div class="subtitle-secondary">Learning Ethical Hacking & IT Administration</div>
@@ -252,7 +344,7 @@
     </section>
 
     <footer>
-      © 2026 František Radoš
+      © 2026 František Radoš — Built with HTML & CSS
     </footer>
 
   </div>
